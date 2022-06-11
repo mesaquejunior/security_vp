@@ -1,0 +1,19 @@
+Downloads realizados entre 16/12/2019 e 24/12/2019
+Endereço de Download: http://www.ssp.sp.gov.br/transparenciassp/Consulta.aspx
+Endereço do orgão: http://www.ssp.sp.gov.br/
+
+Select Municípios da Região Metropolitana do Vale do Paraíba e Litoral Norte
+"NM_MUNICIP" IN( 'APARECIDA', 'ARAPEÍ', 'AREIAS', 'BANANAL', 'CAÇAPAVA', 'CACHOEIRA PAULISTA', 'CAMPOS DO JORDÃO', 'CANAS' ,'CARAGUATATUBA', 'CRUZEIRO', 'CUNHA', 'GUARATINGUETÁ', 'IGARATÁ', 'ILHABELA', 'JACAREÍ', 'JAMBEIRO', 'LAGOINHA', 'LAVRINHAS', 'LORENA', 'MONTEIRO LOBATO', 'NATIVIDADE DA SERRA', 'PARAIBUNA', 'PINDAMONHANGABA', 'PIQUETE', 'POTIM', 'QUELUZ' , 'REDENÇÃO DA SERRA' , 'ROSEIRA' ,'SANTA BRANCA' , 'SANTO ANTÔNIO DO PINHAL' ,'SÃO BENTO DO SAPUCAÍ', 'SÃO JOSÉ DO BARREIRO', 'SÃO JOSÉ DOS CAMPOS', 'SÃO LUIZ DO PARAITINGA', 'SÃO SEBASTIÃO', 'SILVEIRAS', 'TAUBATÉ', 'TREMEMBÉ', 'UBATUBA' )
+
+Problemas encontrados:
+
+Os arquivos baixados, ao serem abertos pelo excel, exibem mensagem de que o arquivo está corrompido. Na realidade o arquivo não é um xls, é um txt separado por tab. Por esta razão foi escrito um script em powershell para renomear os arquivos para csv e posteriormente converter os dados para xlsx.
+Foi necessário padronizar o formato de todos os campos para unificar os dados para importação em tabela única
+Há tipos de informações em campos errados. Ex. String em campo que precisa ser float. A razão é que o operador preenche a informação em campo errado. Ex. Nome de rua no lugar de número. UF no lugar de LATITUDE
+Há dados com campos em ordem diferente do padrão
+
+Depois de corrigidos os problemas acima, inicialmente o Data Frame contém 271792 linhas e 57 colunas, conforme abaixo:
+
+'ANO_BO',  'NUM_BO',  'NUMERO_BOLETIM',  'BO_INICIADO',  'BO_EMITIDO',  'DATAOCORRENCIA',  'PERIDOOCORRENCIA',  'DATACOMUNICACAO',  'DATAELABORACAO',  'BO_AUTORIA',  'FLAGRANTE',  'NUMERO_BOLETIM_PRINCIPAL',  'LOGRADOURO',  'NUMERO',  'BAIRRO',  'CIDADE',  'UF',  'LATITUDE',  'LONGITUDE',  'DESCRICAOLOCAL',  'EXAME',  'SOLUCAO',  'DELEGACIA_NOME',  'DELEGACIA_CIRCUNSCRICAO',  'ESPECIE',  'RUBRICA',  'DESDOBRAMENTO',  'STATUS',  'NOMEPESSOA',  'TIPOPESSOA',  'VITIMAFATAL',  'RG',  'RG_UF',  'NATURALIDADE',  'NACIONALIDADE',  'SEXO',  'DATANASCIMENTO',  'IDADE',  'ESTADOCIVIL',  'PROFISSAO',  'GRAUINSTRUCAO',  'CORCUTIS',  'NATUREZAVINCULADA',  'TIPOVINCULO',  'RELACIONAMENTO',  'PARENTESCO',  'PLACA_VEICULO',  'UF_VEICULO',  'CIDADE_VEICULO',  'DESCR_COR_VEICULO',  'DESCR_MARCA_VEICULO',  'ANO_FABRICACAO',  'ANO_MODELO',  'DESCR_TIPO_VEICULO',  'QUANT_CELULAR',  'MARCA_CELULAR',  'CRIME_TIPO'
+
+
